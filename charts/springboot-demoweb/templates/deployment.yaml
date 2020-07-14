@@ -24,6 +24,14 @@ spec:
           ports:
             
             - containerPort: {{ .Values.service.internalPort }}
+          livenessProbe:
+            httpGet:
+              path: /rest/docker/hello
+              port: {{ .Values.service.internalPort }}
+          readinessProbe:
+            httpGet:
+              path: /rest/docker/hello
+              port: {{ .Values.service.internalPort }}
           resources:
             {{ toYaml .Values.resources | indent 12 }}
               {{- if .Values.nodeSelector }}

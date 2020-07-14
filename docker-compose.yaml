@@ -3,7 +3,16 @@ services:
   web:
     build:
       context: .
-    image: karigar/springboot-helm-chart
+    image: karigartest
     ports :
       - 8085:8085
     restart: always
+
+  registry:
+    restart: always
+    image: registry:2.6.2
+    ports:
+      - 5002:5002
+    environment:
+      REGISTRY_HTTP_ADDR: 0.0.0.0:5002
+      
