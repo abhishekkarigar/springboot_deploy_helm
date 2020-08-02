@@ -21,6 +21,9 @@ podTemplate(nodeSelector: 'kubernetes.io/hostname=minikube',label: 'mypod', cont
         
         stage('Clone repository') {
             container('git') {
+                dir('springboot_deploy_helm'){
+                    deleteDir()
+                }
                 sh 'whoami'
                 sh 'hostname -i'
                 sh 'git clone https://github.com/abhishekkarigar/springboot_deploy_helm.git'
