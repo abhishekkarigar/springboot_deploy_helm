@@ -38,7 +38,7 @@ podTemplate(nodeSelector: 'disktype=ssd',label: 'mypod',
                 //dir('springboot_deploy_helm/') {
                     sh 'hostname'
                     sh 'hostname -i'
-                    sh 'mvn clean install'
+                    sh 'mvn clean package'
                 //}
             }
         }
