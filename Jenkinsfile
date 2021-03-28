@@ -1,4 +1,4 @@
-podTemplate(nodeSelector: 'kubernetes.io/hostname=minikube',label: 'mypod', containers: [
+podTemplate(nodeSelector: 'disktype=ssd',label: 'mypod', containers: [
     containerTemplate(name: 'git', image: 'alpine/git', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true)
