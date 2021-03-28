@@ -7,7 +7,7 @@ podTemplate(nodeSelector: 'disktype=ssd',label: 'mypod',
   ],
   volumes: [
     hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
-    hostPathVolume(mountPath: '/home/jenkins/agent', hostPath: '//c/Users/karigar/Music/mounts'),
+    hostPathVolume(mountPath: '/home/jenkins', hostPath: '//c/Users/karigar/mounted'),
     hostPathVolume(mountPath: '/root/.m2', hostPath: '//c/Users/karigar/.m2')
   ]
   ) {
