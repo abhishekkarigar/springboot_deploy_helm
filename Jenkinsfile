@@ -22,23 +22,24 @@ podTemplate(nodeSelector: 'disktype=ssd',label: 'mypod',
         }
         
         stage('Clone repository') {
-            container('git') {
+            /*container('git') {
                 dir('springboot_deploy_helm'){
                     deleteDir()
                 }
                 sh 'whoami'
                 sh 'hostname -i'
                 sh 'git clone https://github.com/abhishekkarigar/springboot_deploy_helm.git'
-            }
+            }*/
+            checkout scm
         }
 
         stage('Maven Build') {
             container('maven') {
-                dir('springboot_deploy_helm/') {
+                //dir('springboot_deploy_helm/') {
                     sh 'hostname'
                     sh 'hostname -i'
                     sh 'mvn clean install'
-                }
+                //}
             }
         }
     }
