@@ -1,7 +1,7 @@
 podTemplate(nodeSelector: 'disktype=ssd',label: 'mypod',
   containers: [
     containerTemplate(name: 'jnlp', image: 'jenkins/inbound-agent:4.3-4', args: '${computer.jnlpmac} ${computer.name}'),
-    containerTemplate(name: 'git', image: 'alpine/git', ttyEnabled: true, command: 'cat'),
+    //containerTemplate(name: 'git', image: 'alpine/git', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'maven', image: 'maven:3.5.4-jdk-8-slim', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker:18.06.1', command: 'cat', ttyEnabled: true)
   ],
